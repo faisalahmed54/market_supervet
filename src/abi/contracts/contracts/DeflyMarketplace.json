@@ -1,0 +1,3743 @@
+{
+  "contractName": "DeflyMarketplace",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract DeflyToken",
+          "name": "token",
+          "type": "address"
+        },
+        {
+          "internalType": "contract DeflyNFT",
+          "name": "defly",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "buyer",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "seller",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "nftId",
+          "type": "uint256"
+        }
+      ],
+      "name": "Purchase",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "purchaseNFT",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "nftId",
+          "type": "uint256"
+        }
+      ],
+      "name": "secondaryPurchase",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.12+commit.27d51765\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract DeflyToken\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"contract DeflyNFT\",\"name\":\"defly\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"buyer\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"seller\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"nftId\",\"type\":\"uint256\"}],\"name\":\"Purchase\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"purchaseNFT\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"nftId\",\"type\":\"uint256\"}],\"name\":\"secondaryPurchase\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DeflyMarketplace.sol\":\"DeflyMarketplace\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/AccessControl.sol\":{\"keccak256\":\"0x4fc155a2f7837603d69a13cfa481eb5e7f5e02cb77e2ec9edbac30986db37988\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0855147e38b5e36288a8df73b8da49132f14ec7abb19041b0c98872263643aaa\",\"dweb:/ipfs/QmSrSysyFUYQq7hbJaJXG7EyZW6ezDBzEJx3SABp6eiJSS\"]},\"@openzeppelin/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0x24141d2f6b98d4cb77a8936eae8cbaad2e261d9062bdc08036096f4550092501\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b710eb003944777135f027500a5a57b479fe857849f5f467c1ef9687401e3c95\",\"dweb:/ipfs/QmcELzi6KRzAs3DXwxdsoKWRJ13KSeipKQsJgD3unctdZM\"]},\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0xf70bc25d981e4ec9673a995ad2995d5d493ea188d3d8f388bba9c227ce09fb82\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://bd970f51e3a77790c2f02b5b1759827c3b897c3d98c407b3631e8af32e3dc93c\",\"dweb:/ipfs/QmPF85Amgbqjk3SNZKsPCsqCw8JfwYEPMnnhvMJUyX58je\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c\",\"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR\"]},\"@openzeppelin/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xca0c2396dbeb3503b51abf4248ebf77a1461edad513c01529df51850a012bee3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://991b44ff44e0496e8554a90f4c0512c28faed45104d40430019f3c67ea67740e\",\"dweb:/ipfs/Qmc3nRapVbcctELoZS5qe17zLkFB3bETBfwzCTMF1CSuGE\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08\",\"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC\"]},\"@openzeppelin/contracts/token/ERC721/ERC721.sol\":{\"keccak256\":\"0x118ed7540f56b21ff92e21ebaa73584048e98d2ac04ca67571329bb8dbd9032f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://da2918b7aff73dd51d41bfcfa548f81eb50531b8353500fdbdacf297076db070\",\"dweb:/ipfs/Qmb8ixAs1vBjZRowQNuNg6bRf2NZmgZ1JTBxmQS14PHpcL\"]},\"@openzeppelin/contracts/token/ERC721/IERC721.sol\":{\"keccak256\":\"0x2d99a0deb6648c34fbc66d6ac4a2d64798d7a5321b45624f6736fadc63da1962\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://2dcdce5ede1e5e650d174ec0b35be7d47b6a50f30bc895ef0d9e59fb75052e45\",\"dweb:/ipfs/QmQ2XFsDLTYqfEdw7pYzHiGtFRY11yQm4b6ynYgKqDxeB8\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Enumerable.sol\":{\"keccak256\":\"0xe6bd1b1218338b6f9fe17776f48623b4ac3d8a40405f74a44bc23c00abe2ca13\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0c354c3f6e9c487759aa7869be4fba68e0b2efc777b514d289c4cbd3ff8f7e1a\",\"dweb:/ipfs/QmdF9LcSYVmiUCL7JxLEYmSLrjga6zJsujfi6sgEJD4M1z\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Metadata.sol\":{\"keccak256\":\"0xccb917776f826ac6b68bd5a15a5f711e3967848a52ba11e6104d9a4f593314a7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://430255ad2229ced6d880e61a67bdc6e48dbbaed8354a7c1fe918cd8b8714a886\",\"dweb:/ipfs/QmTHY56odzqEpEC6v6tafaWMYY7vmULw25q5XHJLCCAeox\"]},\"@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol\":{\"keccak256\":\"0x52146049d6709c870e8ddcd988b5155cb6c5d640cfcd8978aee52bc1ba2ec4eb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ada84513617b7c1b2f890b44503735abaec73a1acd030112a17aac7e6c66a4a1\",\"dweb:/ipfs/QmaiFwdio67iJrfjAdkMac24eJ5sS1qD7CZW6PhUU6KjiK\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0x28911e614500ae7c607a432a709d35da25f3bc5ddc8bd12b278b66358070c0ea\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://256c8c8af5eb072bc473226ab2b2187149b8fc04f5f4a4820db22527f5ce8e3c\",\"dweb:/ipfs/QmRvi5BhnL7Rxf85KrJhwM6RRhukm4tzoctRdgQEheNyiN\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f\",\"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96\"]},\"@openzeppelin/contracts/utils/Counters.sol\":{\"keccak256\":\"0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad\",\"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV\"]},\"@openzeppelin/contracts/utils/EnumerableMap.sol\":{\"keccak256\":\"0x4b087f06b6670a131a5a14e53b1d2a5ef19c034cc5ec42eeebcf9554325744ad\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f6a6af5d848334e40db419773f6360601e311ffc21c2e274f730b8c542da99fd\",\"dweb:/ipfs/QmfA24cxQ2g41ZWUuDF295dxDJ4xF1bSDYtC3EaLd7CzW8\"]},\"@openzeppelin/contracts/utils/EnumerableSet.sol\":{\"keccak256\":\"0x1562cd9922fbf739edfb979f506809e2743789cbde3177515542161c3d04b164\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4580d57781513d98870d9738c7d39094336e0a70cdb90d68dad549c6ced466ec\",\"dweb:/ipfs/Qmf9YZzzRFuvMnav9dgmeRUpdYMMECiZX8w25sHWVbA18V\"]},\"@openzeppelin/contracts/utils/Strings.sol\":{\"keccak256\":\"0xa1e12f97981f1d0964b1c048978606a57127c56c438bab61cdfe269cad859a74\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5eefac1760f524971e14aa3f3d79515a3d54fd28c1d3bdca0b36127da349b830\",\"dweb:/ipfs/QmUMzkyH3ytJX5gVPizQruNLhkKmuJb3nFqBDad4LPdg5U\"]},\"project:/contracts/DeflyMarketplace.sol\":{\"keccak256\":\"0xc1501da98922678c78531bbdaf295d42cec4ee7688a77c576e9b8157ff5173d2\",\"urls\":[\"bzz-raw://e42a619890e1fb3fb5dd15c8080fd75f6385298bbc072e1dde609e060548a554\",\"dweb:/ipfs/QmYyaqHHFCZp5HhUtzpgZNEfj2HFsrPcsKVNqrRLFxKrpw\"]},\"project:/contracts/DeflyNFT.sol\":{\"keccak256\":\"0x5ce989d52546bd1f8caf986f6355bc1ecc52826abf4dfa70dd744edb01f9201d\",\"urls\":[\"bzz-raw://2ebeea69fa463bc0903e39f8c81de7f675e240449541841e4e6e221df9169380\",\"dweb:/ipfs/QmciG9hLFuvcgRAvRp18qiMQ82wyWpV1WPwNQ5dzhkdWaJ\"]},\"project:/contracts/DeflyToken.sol\":{\"keccak256\":\"0x5ab6a66cf0b88f4e446baea0f04001d4f45b3ef68caeb41fae8e6d8330f0ebc6\",\"urls\":[\"bzz-raw://4659bf0b552c17f29b62d49816c1264e87cd65510c470802bab18a1e5a63ba73\",\"dweb:/ipfs/QmT6YCHLim9kfoFRfac3u9C9qVkvMDns1VWgPGBrQyTCJZ\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516106093803806106098339818101604052604081101561003357600080fd5b508051602091820151600080546001600160a01b038085166001600160a01b0319928316179092556001805483851692169190911790819055604080517f0b7055780000000000000000000000000000000000000000000000000000000081529051949593949190921692630b7055789260048082019391829003018186803b1580156100bf57600080fd5b505afa1580156100d3573d6000803e3d6000fd5b505050506040513d60208110156100e957600080fd5b5051600280546001600160a01b0319166001600160a01b03909216919091179055506104ed90508061011c6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80632eeac4c31461003b578063613b4d321461005a575b600080fd5b6100586004803603602081101561005157600080fd5b5035610062565b005b610058610344565b600154604080516331a9108f60e11b81526004810184905290516000926001600160a01b031691636352211e916024808301926020929190829003018186803b1580156100ae57600080fd5b505afa1580156100c2573d6000803e3d6000fd5b505050506040513d60208110156100d857600080fd5b50516001546040805163569e35db60e01b815260048101869052905192935033926000926001600160a01b03169163569e35db916024808301926020929190829003018186803b15801561012b57600080fd5b505afa15801561013f573d6000803e3d6000fd5b505050506040513d602081101561015557600080fd5b505160008054604080516323b872dd60e01b81526001600160a01b03878116600483015288811660248301526064600a87028190048088036044850152935196975092959316936323b872dd93828401936020939192918390030190829087803b1580156101c257600080fd5b505af11580156101d6573d6000803e3d6000fd5b505050506040513d60208110156101ec57600080fd5b505060008054600254604080516323b872dd60e01b81526001600160a01b038881166004830152928316602482015260448101869052905191909216926323b872dd92606480820193602093909283900390910190829087803b15801561025257600080fd5b505af1158015610266573d6000803e3d6000fd5b505050506040513d602081101561027c57600080fd5b50506001546040805163d3f02f9360e01b81526001600160a01b038681166004830152602482018990529151919092169163d3f02f9391604480830192600092919082900301818387803b1580156102d357600080fd5b505af11580156102e7573d6000803e3d6000fd5b50505050826001600160a01b03167f22e3ae3a20c49dce14046235895c7a3ffc0a6a5f3577c370177ad45fa619485d858760405180836001600160a01b031681526020018281526020019250505060405180910390a25050505050565b6000546002546001546040805163fb107a4f60e01b8152905133946001600160a01b03908116946323b872dd9487949183169392169163fb107a4f91600480820192602092909190829003018186803b1580156103a057600080fd5b505afa1580156103b4573d6000803e3d6000fd5b505050506040513d60208110156103ca57600080fd5b5051604080516001600160e01b031960e087901b1681526001600160a01b0394851660048201529290931660248301526044820152905160648083019260209291908290030181600087803b15801561042257600080fd5b505af1158015610436573d6000803e3d6000fd5b505050506040513d602081101561044c57600080fd5b5050600154604080516336e986ef60e01b81526001600160a01b038481166004830152915191909216916336e986ef91602480830192600092919082900301818387803b15801561049c57600080fd5b505af11580156104b0573d6000803e3d6000fd5b505050505056fea26469706673582212201767c5c150e749f207fd2bb21e883c95592da5bd3d89b03563a34d626eddcfaa64736f6c634300060c0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80632eeac4c31461003b578063613b4d321461005a575b600080fd5b6100586004803603602081101561005157600080fd5b5035610062565b005b610058610344565b600154604080516331a9108f60e11b81526004810184905290516000926001600160a01b031691636352211e916024808301926020929190829003018186803b1580156100ae57600080fd5b505afa1580156100c2573d6000803e3d6000fd5b505050506040513d60208110156100d857600080fd5b50516001546040805163569e35db60e01b815260048101869052905192935033926000926001600160a01b03169163569e35db916024808301926020929190829003018186803b15801561012b57600080fd5b505afa15801561013f573d6000803e3d6000fd5b505050506040513d602081101561015557600080fd5b505160008054604080516323b872dd60e01b81526001600160a01b03878116600483015288811660248301526064600a87028190048088036044850152935196975092959316936323b872dd93828401936020939192918390030190829087803b1580156101c257600080fd5b505af11580156101d6573d6000803e3d6000fd5b505050506040513d60208110156101ec57600080fd5b505060008054600254604080516323b872dd60e01b81526001600160a01b038881166004830152928316602482015260448101869052905191909216926323b872dd92606480820193602093909283900390910190829087803b15801561025257600080fd5b505af1158015610266573d6000803e3d6000fd5b505050506040513d602081101561027c57600080fd5b50506001546040805163d3f02f9360e01b81526001600160a01b038681166004830152602482018990529151919092169163d3f02f9391604480830192600092919082900301818387803b1580156102d357600080fd5b505af11580156102e7573d6000803e3d6000fd5b50505050826001600160a01b03167f22e3ae3a20c49dce14046235895c7a3ffc0a6a5f3577c370177ad45fa619485d858760405180836001600160a01b031681526020018281526020019250505060405180910390a25050505050565b6000546002546001546040805163fb107a4f60e01b8152905133946001600160a01b03908116946323b872dd9487949183169392169163fb107a4f91600480820192602092909190829003018186803b1580156103a057600080fd5b505afa1580156103b4573d6000803e3d6000fd5b505050506040513d60208110156103ca57600080fd5b5051604080516001600160e01b031960e087901b1681526001600160a01b0394851660048201529290931660248301526044820152905160648083019260209291908290030181600087803b15801561042257600080fd5b505af1158015610436573d6000803e3d6000fd5b505050506040513d602081101561044c57600080fd5b5050600154604080516336e986ef60e01b81526001600160a01b038481166004830152915191909216916336e986ef91602480830192600092919082900301818387803b15801561049c57600080fd5b505af11580156104b0573d6000803e3d6000fd5b505050505056fea26469706673582212201767c5c150e749f207fd2bb21e883c95592da5bd3d89b03563a34d626eddcfaa64736f6c634300060c0033",
+  "immutableReferences": {},
+  "sourceMap": "78:1147:18:-:0;;;204:152;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;204:152:18;;;;;;;267:6;:14;;-1:-1:-1;;;;;267:14:18;;;-1:-1:-1;;;;;;267:14:18;;;;;;;-1:-1:-1;291:14:18;;;;;;;;;;;;;;;204:152;328:21;;-1:-1:-1;;;328:21:18;;;;204:152;;;;328:6;;;;;:19;;:21;;;;;;;;;;;:6;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;328:21:18;315:10;:34;;-1:-1:-1;;;;;;315:34:18;-1:-1:-1;;;;;315:34:18;;;;;;;;;-1:-1:-1;;;;;78:1147:18;-1:-1:-1;78:1147:18;;",
+  "deployedSourceMap": "78:1147:18:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;738:485;;;;;;;;;;;;;;;;-1:-1:-1;738:485:18;;:::i;:::-;;486:180;;;:::i;738:485::-;814:6;;:21;;;-1:-1:-1;;;814:21:18;;;;;;;;;;-1:-1:-1;;;;;;;814:6:18;;:14;;:21;;;;;;;;;;;;;;:6;:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;814:21:18;904:6;;:29;;;-1:-1:-1;;;904:29:18;;;;;;;;;;814:21;;-1:-1:-1;861:10:18;;-1:-1:-1;;;;;;;904:6:18;;-1:-1:-1;;904:29:18;;;;;814:21;;904:29;;;;;;;:6;:29;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;904:29:18;943:17;999:6;;:60;;;-1:-1:-1;;;999:60:18;;-1:-1:-1;;;;;999:60:18;;;;;;;;;;;;;;985:3;979:2;964:17;;963:25;;;1034:24;;;999:60;;;;;;904:29;;-1:-1:-1;963:25:18;;999:6;;;-1:-1:-1;;999:60:18;;;;;;;;;;;;;;;;:6;:60;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;1069:6:18;;;1096:10;;1069:49;;;-1:-1:-1;;;1069:49:18;;-1:-1:-1;;;;;1069:49:18;;;;;;;1096:10;;;1069:49;;;;;;;;;;;;:6;;;;;-1:-1:-1;;1069:49:18;;;;;999:60;;1069:49;;;;;;;;;;;:6;:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;1129:6:18;;:41;;;-1:-1:-1;;;1129:41:18;;-1:-1:-1;;;;;1129:41:18;;;;;;;;;;;;;;;:6;;;;;-1:-1:-1;;1129:41:18;;;;;-1:-1:-1;;1129:41:18;;;;;;;-1:-1:-1;1129:6:18;:41;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;1186:30:18;;;-1:-1:-1;;;;;1186:30:18;;;;;;;;;;;;;;;;;-1:-1:-1;1186:30:18;;-1:-1:-1;1186:30:18;;;;;;;;;738:485;;;;;:::o;486:180::-;526:13;563:6;590:10;;563:6;602;:20;;;-1:-1:-1;;;602:20:18;;;;542:10;;-1:-1:-1;;;;;563:6:18;;;;:19;;542:10;;590;;;;602:6;;;-1:-1:-1;;602:20:18;;;;;;;;;;;;;;;:6;:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;602:20:18;563:60;;;-1:-1:-1;563:60:18;;;-1:-1:-1;;;;;;563:60:18;;;-1:-1:-1;;;;;563:60:18;;;;;;;;;;;;;;;;;;;;;;;;;;602:20;;563:60;;;;;;;-1:-1:-1;563:60:18;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;634:6:18;;:25;;;-1:-1:-1;;;634:25:18;;-1:-1:-1;;;;;634:25:18;;;;;;;;;:6;;;;;-1:-1:-1;;634:25:18;;;;;-1:-1:-1;;634:25:18;;;;;;;-1:-1:-1;634:6:18;:25;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;486:180;:::o",
+  "source": "pragma solidity ^0.6.0;\n\nimport \"./DeflyNFT.sol\";\nimport \"./DeflyToken.sol\";\n\ncontract DeflyMarketplace {\n    DeflyToken private _token;\n    DeflyNFT private _defly;\n\n    address private _organiser;\n\n    constructor(DeflyToken token, DeflyNFT defly) public {\n        _token = token;\n        _defly = defly;\n        _organiser = _defly.getOrganiser();\n    }\n\n    event Purchase(address indexed buyer, address seller, uint256 nftId);\n\n    // Purchase nfts from the organiser directly\n    function purchaseNFT() public {\n        address buyer = msg.sender;\n\n        _token.transferFrom(buyer, _organiser, _defly.getNFTPrice());\n\n        _defly.transferNFT(buyer);\n    }\n\n    // Purchase nft from the secondary market hosted by organiser\n    function secondaryPurchase(uint256 nftId) public {\n        address seller = _defly.ownerOf(nftId);\n        address buyer = msg.sender;\n        uint256 sellingPrice = _defly.getSellingPrice(nftId);\n        uint256 commision = (sellingPrice * 10) / 100;\n\n        _token.transferFrom(buyer, seller, sellingPrice - commision);\n        _token.transferFrom(buyer, _organiser, commision);\n\n        _defly.secondaryTransferNFT(buyer, nftId);\n\n        emit Purchase(buyer, seller, nftId);\n    }\n}\n",
+  "sourcePath": "E:\\DigiMarkDeveloper\\nft_marketplace_2021-master\\contracts\\DeflyMarketplace.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/DeflyMarketplace.sol",
+    "exportedSymbols": {
+      "DeflyMarketplace": [
+        4172
+      ]
+    },
+    "id": 4173,
+    "license": null,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4043,
+        "literals": [
+          "solidity",
+          "^",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "absolutePath": "project:/contracts/DeflyNFT.sol",
+        "file": "./DeflyNFT.sol",
+        "id": 4044,
+        "nodeType": "ImportDirective",
+        "scope": 4173,
+        "sourceUnit": 4895,
+        "src": "25:24:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/DeflyToken.sol",
+        "file": "./DeflyToken.sol",
+        "id": 4045,
+        "nodeType": "ImportDirective",
+        "scope": 4173,
+        "sourceUnit": 5094,
+        "src": "50:26:18",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 4172,
+        "linearizedBaseContracts": [
+          4172
+        ],
+        "name": "DeflyMarketplace",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 4047,
+            "mutability": "mutable",
+            "name": "_token",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4172,
+            "src": "110:25:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DeflyToken_$5093",
+              "typeString": "contract DeflyToken"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4046,
+              "name": "DeflyToken",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5093,
+              "src": "110:10:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                "typeString": "contract DeflyToken"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 4049,
+            "mutability": "mutable",
+            "name": "_defly",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4172,
+            "src": "141:23:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+              "typeString": "contract DeflyNFT"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 4048,
+              "name": "DeflyNFT",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 4894,
+              "src": "141:8:18",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                "typeString": "contract DeflyNFT"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 4051,
+            "mutability": "mutable",
+            "name": "_organiser",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 4172,
+            "src": "171:26:18",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 4050,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "171:7:18",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 4072,
+              "nodeType": "Block",
+              "src": "257:99:18",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4060,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 4058,
+                      "name": "_token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4047,
+                      "src": "267:6:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                        "typeString": "contract DeflyToken"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 4059,
+                      "name": "token",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4053,
+                      "src": "276:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                        "typeString": "contract DeflyToken"
+                      }
+                    },
+                    "src": "267:14:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                      "typeString": "contract DeflyToken"
+                    }
+                  },
+                  "id": 4061,
+                  "nodeType": "ExpressionStatement",
+                  "src": "267:14:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4064,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 4062,
+                      "name": "_defly",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4049,
+                      "src": "291:6:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                        "typeString": "contract DeflyNFT"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 4063,
+                      "name": "defly",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4055,
+                      "src": "300:5:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                        "typeString": "contract DeflyNFT"
+                      }
+                    },
+                    "src": "291:14:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                      "typeString": "contract DeflyNFT"
+                    }
+                  },
+                  "id": 4065,
+                  "nodeType": "ExpressionStatement",
+                  "src": "291:14:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 4070,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 4066,
+                      "name": "_organiser",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4051,
+                      "src": "315:10:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 4067,
+                          "name": "_defly",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4049,
+                          "src": "328:6:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                            "typeString": "contract DeflyNFT"
+                          }
+                        },
+                        "id": 4068,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "getOrganiser",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 4619,
+                        "src": "328:19:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                          "typeString": "function () view external returns (address)"
+                        }
+                      },
+                      "id": 4069,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "328:21:18",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "315:34:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 4071,
+                  "nodeType": "ExpressionStatement",
+                  "src": "315:34:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 4073,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4056,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4053,
+                  "mutability": "mutable",
+                  "name": "token",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4073,
+                  "src": "216:16:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                    "typeString": "contract DeflyToken"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 4052,
+                    "name": "DeflyToken",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 5093,
+                    "src": "216:10:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                      "typeString": "contract DeflyToken"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4055,
+                  "mutability": "mutable",
+                  "name": "defly",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4073,
+                  "src": "234:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                    "typeString": "contract DeflyNFT"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 4054,
+                    "name": "DeflyNFT",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4894,
+                    "src": "234:8:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                      "typeString": "contract DeflyNFT"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "215:34:18"
+            },
+            "returnParameters": {
+              "id": 4057,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "257:0:18"
+            },
+            "scope": 4172,
+            "src": "204:152:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 4081,
+            "name": "Purchase",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 4080,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4075,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "buyer",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4081,
+                  "src": "377:21:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4074,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "377:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4077,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "seller",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4081,
+                  "src": "400:14:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4076,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "400:7:18",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4079,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "nftId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4081,
+                  "src": "416:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4078,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "416:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "376:54:18"
+            },
+            "src": "362:69:18"
+          },
+          {
+            "body": {
+              "id": 4105,
+              "nodeType": "Block",
+              "src": "516:150:18",
+              "statements": [
+                {
+                  "assignments": [
+                    4085
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4085,
+                      "mutability": "mutable",
+                      "name": "buyer",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4105,
+                      "src": "526:13:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 4084,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "526:7:18",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4088,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4086,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -15,
+                      "src": "542:3:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 4087,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "542:10:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "526:26:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4092,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4085,
+                        "src": "583:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4093,
+                        "name": "_organiser",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4051,
+                        "src": "590:10:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "arguments": [],
+                        "expression": {
+                          "argumentTypes": [],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 4094,
+                            "name": "_defly",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4049,
+                            "src": "602:6:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                              "typeString": "contract DeflyNFT"
+                            }
+                          },
+                          "id": 4095,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "getNFTPrice",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 4611,
+                          "src": "602:18:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$__$returns$_t_uint256_$",
+                            "typeString": "function () view external returns (uint256)"
+                          }
+                        },
+                        "id": 4096,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "602:20:18",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4089,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4047,
+                        "src": "563:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                          "typeString": "contract DeflyToken"
+                        }
+                      },
+                      "id": 4091,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1017,
+                      "src": "563:19:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 4097,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "563:60:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 4098,
+                  "nodeType": "ExpressionStatement",
+                  "src": "563:60:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4102,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4085,
+                        "src": "653:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4099,
+                        "name": "_defly",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "634:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                          "typeString": "contract DeflyNFT"
+                        }
+                      },
+                      "id": 4101,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferNFT",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4462,
+                      "src": "634:18:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address) external"
+                      }
+                    },
+                    "id": 4103,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "634:25:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4104,
+                  "nodeType": "ExpressionStatement",
+                  "src": "634:25:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "613b4d32",
+            "id": 4106,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "purchaseNFT",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4082,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "506:2:18"
+            },
+            "returnParameters": {
+              "id": 4083,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "516:0:18"
+            },
+            "scope": 4172,
+            "src": "486:180:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 4170,
+              "nodeType": "Block",
+              "src": "787:436:18",
+              "statements": [
+                {
+                  "assignments": [
+                    4112
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4112,
+                      "mutability": "mutable",
+                      "name": "seller",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4170,
+                      "src": "797:14:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 4111,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "797:7:18",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4117,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4115,
+                        "name": "nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4108,
+                        "src": "829:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4113,
+                        "name": "_defly",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "814:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                          "typeString": "contract DeflyNFT"
+                        }
+                      },
+                      "id": 4114,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "ownerOf",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1545,
+                      "src": "814:14:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_address_$",
+                        "typeString": "function (uint256) view external returns (address)"
+                      }
+                    },
+                    "id": 4116,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "814:21:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "797:38:18"
+                },
+                {
+                  "assignments": [
+                    4119
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4119,
+                      "mutability": "mutable",
+                      "name": "buyer",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4170,
+                      "src": "845:13:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      },
+                      "typeName": {
+                        "id": 4118,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "845:7:18",
+                        "stateMutability": "nonpayable",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4122,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 4120,
+                      "name": "msg",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": -15,
+                      "src": "861:3:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_magic_message",
+                        "typeString": "msg"
+                      }
+                    },
+                    "id": 4121,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "sender",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": null,
+                    "src": "861:10:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address_payable",
+                      "typeString": "address payable"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "845:26:18"
+                },
+                {
+                  "assignments": [
+                    4124
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4124,
+                      "mutability": "mutable",
+                      "name": "sellingPrice",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4170,
+                      "src": "881:20:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 4123,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "881:7:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4129,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4127,
+                        "name": "nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4108,
+                        "src": "927:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4125,
+                        "name": "_defly",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "904:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                          "typeString": "contract DeflyNFT"
+                        }
+                      },
+                      "id": 4126,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getSellingPrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4652,
+                      "src": "904:22:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
+                        "typeString": "function (uint256) view external returns (uint256)"
+                      }
+                    },
+                    "id": 4128,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "904:29:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "881:52:18"
+                },
+                {
+                  "assignments": [
+                    4131
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 4131,
+                      "mutability": "mutable",
+                      "name": "commision",
+                      "nodeType": "VariableDeclaration",
+                      "overrides": null,
+                      "scope": 4170,
+                      "src": "943:17:18",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 4130,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "943:7:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 4138,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 4137,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "components": [
+                        {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 4134,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 4132,
+                            "name": "sellingPrice",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 4124,
+                            "src": "964:12:18",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "*",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "3130",
+                            "id": 4133,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "979:2:18",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_10_by_1",
+                              "typeString": "int_const 10"
+                            },
+                            "value": "10"
+                          },
+                          "src": "964:17:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "id": 4135,
+                      "isConstant": false,
+                      "isInlineArray": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "TupleExpression",
+                      "src": "963:19:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "/",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "hexValue": "313030",
+                      "id": 4136,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "985:3:18",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_100_by_1",
+                        "typeString": "int_const 100"
+                      },
+                      "value": "100"
+                    },
+                    "src": "963:25:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "943:45:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4142,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4119,
+                        "src": "1019:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4143,
+                        "name": "seller",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4112,
+                        "src": "1026:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "id": 4146,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "id": 4144,
+                          "name": "sellingPrice",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4124,
+                          "src": "1034:12:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "-",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "id": 4145,
+                          "name": "commision",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 4131,
+                          "src": "1049:9:18",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "src": "1034:24:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4139,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4047,
+                        "src": "999:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                          "typeString": "contract DeflyToken"
+                        }
+                      },
+                      "id": 4141,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1017,
+                      "src": "999:19:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 4147,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "999:60:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 4148,
+                  "nodeType": "ExpressionStatement",
+                  "src": "999:60:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4152,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4119,
+                        "src": "1089:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4153,
+                        "name": "_organiser",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4051,
+                        "src": "1096:10:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4154,
+                        "name": "commision",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4131,
+                        "src": "1108:9:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4149,
+                        "name": "_token",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4047,
+                        "src": "1069:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyToken_$5093",
+                          "typeString": "contract DeflyToken"
+                        }
+                      },
+                      "id": 4151,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "transferFrom",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 1017,
+                      "src": "1069:19:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
+                        "typeString": "function (address,address,uint256) external returns (bool)"
+                      }
+                    },
+                    "id": 4155,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1069:49:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 4156,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1069:49:18"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4160,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4119,
+                        "src": "1157:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4161,
+                        "name": "nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4108,
+                        "src": "1164:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 4157,
+                        "name": "_defly",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4049,
+                        "src": "1129:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_DeflyNFT_$4894",
+                          "typeString": "contract DeflyNFT"
+                        }
+                      },
+                      "id": 4159,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "secondaryTransferNFT",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 4530,
+                      "src": "1129:27:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,uint256) external"
+                      }
+                    },
+                    "id": 4162,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1129:41:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4163,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1129:41:18"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 4165,
+                        "name": "buyer",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4119,
+                        "src": "1195:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4166,
+                        "name": "seller",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4112,
+                        "src": "1202:6:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 4167,
+                        "name": "nftId",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 4108,
+                        "src": "1210:5:18",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 4164,
+                      "name": "Purchase",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 4081,
+                      "src": "1186:8:18",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$",
+                        "typeString": "function (address,address,uint256)"
+                      }
+                    },
+                    "id": 4168,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1186:30:18",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 4169,
+                  "nodeType": "EmitStatement",
+                  "src": "1181:35:18"
+                }
+              ]
+            },
+            "documentation": null,
+            "functionSelector": "2eeac4c3",
+            "id": 4171,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "secondaryPurchase",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 4109,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4108,
+                  "mutability": "mutable",
+                  "name": "nftId",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 4171,
+                  "src": "765:13:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 4107,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "764:15:18"
+            },
+            "returnParameters": {
+              "id": 4110,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "787:0:18"
+            },
+            "scope": 4172,
+            "src": "738:485:18",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 4173,
+        "src": "78:1147:18"
+      }
+    ],
+    "src": "0:1226:18"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/DeflyMarketplace.sol",
+      "exportedSymbols": {
+        "DeflyMarketplace": [
+          4172
+        ]
+      },
+      "license": null
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 4043,
+        "name": "PragmaDirective",
+        "src": "0:23:18"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 4895,
+          "absolutePath": "project:/contracts/DeflyNFT.sol",
+          "file": "./DeflyNFT.sol",
+          "scope": 4173,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 4044,
+        "name": "ImportDirective",
+        "src": "25:24:18"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 5094,
+          "absolutePath": "project:/contracts/DeflyToken.sol",
+          "file": "./DeflyToken.sol",
+          "scope": 4173,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 4045,
+        "name": "ImportDirective",
+        "src": "50:26:18"
+      },
+      {
+        "attributes": {
+          "abstract": false,
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            4172
+          ],
+          "name": "DeflyMarketplace",
+          "scope": 4173
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_token",
+              "overrides": null,
+              "scope": 4172,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract DeflyToken",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "DeflyToken",
+                  "referencedDeclaration": 5093,
+                  "type": "contract DeflyToken"
+                },
+                "id": 4046,
+                "name": "UserDefinedTypeName",
+                "src": "110:10:18"
+              }
+            ],
+            "id": 4047,
+            "name": "VariableDeclaration",
+            "src": "110:25:18"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_defly",
+              "overrides": null,
+              "scope": 4172,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract DeflyNFT",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "DeflyNFT",
+                  "referencedDeclaration": 4894,
+                  "type": "contract DeflyNFT"
+                },
+                "id": 4048,
+                "name": "UserDefinedTypeName",
+                "src": "141:8:18"
+              }
+            ],
+            "id": 4049,
+            "name": "VariableDeclaration",
+            "src": "141:23:18"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "mutability": "mutable",
+              "name": "_organiser",
+              "overrides": null,
+              "scope": 4172,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 4050,
+                "name": "ElementaryTypeName",
+                "src": "171:7:18"
+              }
+            ],
+            "id": 4051,
+            "name": "VariableDeclaration",
+            "src": "171:26:18"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "overrides": null,
+              "scope": 4172,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "token",
+                      "overrides": null,
+                      "scope": 4073,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract DeflyToken",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DeflyToken",
+                          "referencedDeclaration": 5093,
+                          "type": "contract DeflyToken"
+                        },
+                        "id": 4052,
+                        "name": "UserDefinedTypeName",
+                        "src": "216:10:18"
+                      }
+                    ],
+                    "id": 4053,
+                    "name": "VariableDeclaration",
+                    "src": "216:16:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "defly",
+                      "overrides": null,
+                      "scope": 4073,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract DeflyNFT",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "DeflyNFT",
+                          "referencedDeclaration": 4894,
+                          "type": "contract DeflyNFT"
+                        },
+                        "id": 4054,
+                        "name": "UserDefinedTypeName",
+                        "src": "234:8:18"
+                      }
+                    ],
+                    "id": 4055,
+                    "name": "VariableDeclaration",
+                    "src": "234:14:18"
+                  }
+                ],
+                "id": 4056,
+                "name": "ParameterList",
+                "src": "215:34:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4057,
+                "name": "ParameterList",
+                "src": "257:0:18"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract DeflyToken"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4047,
+                              "type": "contract DeflyToken",
+                              "value": "_token"
+                            },
+                            "id": 4058,
+                            "name": "Identifier",
+                            "src": "267:6:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4053,
+                              "type": "contract DeflyToken",
+                              "value": "token"
+                            },
+                            "id": 4059,
+                            "name": "Identifier",
+                            "src": "276:5:18"
+                          }
+                        ],
+                        "id": 4060,
+                        "name": "Assignment",
+                        "src": "267:14:18"
+                      }
+                    ],
+                    "id": 4061,
+                    "name": "ExpressionStatement",
+                    "src": "267:14:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract DeflyNFT"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4049,
+                              "type": "contract DeflyNFT",
+                              "value": "_defly"
+                            },
+                            "id": 4062,
+                            "name": "Identifier",
+                            "src": "291:6:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4055,
+                              "type": "contract DeflyNFT",
+                              "value": "defly"
+                            },
+                            "id": 4063,
+                            "name": "Identifier",
+                            "src": "300:5:18"
+                          }
+                        ],
+                        "id": 4064,
+                        "name": "Assignment",
+                        "src": "291:14:18"
+                      }
+                    ],
+                    "id": 4065,
+                    "name": "ExpressionStatement",
+                    "src": "291:14:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "address"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4051,
+                              "type": "address",
+                              "value": "_organiser"
+                            },
+                            "id": 4066,
+                            "name": "Identifier",
+                            "src": "315:10:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "address",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "getOrganiser",
+                                  "referencedDeclaration": 4619,
+                                  "type": "function () view external returns (address)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 4049,
+                                      "type": "contract DeflyNFT",
+                                      "value": "_defly"
+                                    },
+                                    "id": 4067,
+                                    "name": "Identifier",
+                                    "src": "328:6:18"
+                                  }
+                                ],
+                                "id": 4068,
+                                "name": "MemberAccess",
+                                "src": "328:19:18"
+                              }
+                            ],
+                            "id": 4069,
+                            "name": "FunctionCall",
+                            "src": "328:21:18"
+                          }
+                        ],
+                        "id": 4070,
+                        "name": "Assignment",
+                        "src": "315:34:18"
+                      }
+                    ],
+                    "id": 4071,
+                    "name": "ExpressionStatement",
+                    "src": "315:34:18"
+                  }
+                ],
+                "id": 4072,
+                "name": "Block",
+                "src": "257:99:18"
+              }
+            ],
+            "id": 4073,
+            "name": "FunctionDefinition",
+            "src": "204:152:18"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "documentation": null,
+              "name": "Purchase"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "mutability": "mutable",
+                      "name": "buyer",
+                      "overrides": null,
+                      "scope": 4081,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4074,
+                        "name": "ElementaryTypeName",
+                        "src": "377:7:18"
+                      }
+                    ],
+                    "id": 4075,
+                    "name": "VariableDeclaration",
+                    "src": "377:21:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "seller",
+                      "overrides": null,
+                      "scope": 4081,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 4076,
+                        "name": "ElementaryTypeName",
+                        "src": "400:7:18"
+                      }
+                    ],
+                    "id": 4077,
+                    "name": "VariableDeclaration",
+                    "src": "400:14:18"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "mutability": "mutable",
+                      "name": "nftId",
+                      "overrides": null,
+                      "scope": 4081,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4078,
+                        "name": "ElementaryTypeName",
+                        "src": "416:7:18"
+                      }
+                    ],
+                    "id": 4079,
+                    "name": "VariableDeclaration",
+                    "src": "416:13:18"
+                  }
+                ],
+                "id": 4080,
+                "name": "ParameterList",
+                "src": "376:54:18"
+              }
+            ],
+            "id": 4081,
+            "name": "EventDefinition",
+            "src": "362:69:18"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "613b4d32",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "purchaseNFT",
+              "overrides": null,
+              "scope": 4172,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4082,
+                "name": "ParameterList",
+                "src": "506:2:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4083,
+                "name": "ParameterList",
+                "src": "516:0:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        4085
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "buyer",
+                          "overrides": null,
+                          "scope": 4105,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "address",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 4084,
+                            "name": "ElementaryTypeName",
+                            "src": "526:7:18"
+                          }
+                        ],
+                        "id": 4085,
+                        "name": "VariableDeclaration",
+                        "src": "526:13:18"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "sender",
+                          "referencedDeclaration": null,
+                          "type": "address payable"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": -15,
+                              "type": "msg",
+                              "value": "msg"
+                            },
+                            "id": 4086,
+                            "name": "Identifier",
+                            "src": "542:3:18"
+                          }
+                        ],
+                        "id": 4087,
+                        "name": "MemberAccess",
+                        "src": "542:10:18"
+                      }
+                    ],
+                    "id": 4088,
+                    "name": "VariableDeclarationStatement",
+                    "src": "526:26:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transferFrom",
+                              "referencedDeclaration": 1017,
+                              "type": "function (address,address,uint256) external returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4047,
+                                  "type": "contract DeflyToken",
+                                  "value": "_token"
+                                },
+                                "id": 4089,
+                                "name": "Identifier",
+                                "src": "563:6:18"
+                              }
+                            ],
+                            "id": 4091,
+                            "name": "MemberAccess",
+                            "src": "563:19:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4085,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4092,
+                            "name": "Identifier",
+                            "src": "583:5:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4051,
+                              "type": "address",
+                              "value": "_organiser"
+                            },
+                            "id": 4093,
+                            "name": "Identifier",
+                            "src": "590:10:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "arguments": [
+                                null
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "isStructConstructorCall": false,
+                              "lValueRequested": false,
+                              "names": [
+                                null
+                              ],
+                              "tryCall": false,
+                              "type": "uint256",
+                              "type_conversion": false
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": [
+                                    null
+                                  ],
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "member_name": "getNFTPrice",
+                                  "referencedDeclaration": 4611,
+                                  "type": "function () view external returns (uint256)"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 4049,
+                                      "type": "contract DeflyNFT",
+                                      "value": "_defly"
+                                    },
+                                    "id": 4094,
+                                    "name": "Identifier",
+                                    "src": "602:6:18"
+                                  }
+                                ],
+                                "id": 4095,
+                                "name": "MemberAccess",
+                                "src": "602:18:18"
+                              }
+                            ],
+                            "id": 4096,
+                            "name": "FunctionCall",
+                            "src": "602:20:18"
+                          }
+                        ],
+                        "id": 4097,
+                        "name": "FunctionCall",
+                        "src": "563:60:18"
+                      }
+                    ],
+                    "id": 4098,
+                    "name": "ExpressionStatement",
+                    "src": "563:60:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transferNFT",
+                              "referencedDeclaration": 4462,
+                              "type": "function (address) external"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4049,
+                                  "type": "contract DeflyNFT",
+                                  "value": "_defly"
+                                },
+                                "id": 4099,
+                                "name": "Identifier",
+                                "src": "634:6:18"
+                              }
+                            ],
+                            "id": 4101,
+                            "name": "MemberAccess",
+                            "src": "634:18:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4085,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4102,
+                            "name": "Identifier",
+                            "src": "653:5:18"
+                          }
+                        ],
+                        "id": 4103,
+                        "name": "FunctionCall",
+                        "src": "634:25:18"
+                      }
+                    ],
+                    "id": 4104,
+                    "name": "ExpressionStatement",
+                    "src": "634:25:18"
+                  }
+                ],
+                "id": 4105,
+                "name": "Block",
+                "src": "516:150:18"
+              }
+            ],
+            "id": 4106,
+            "name": "FunctionDefinition",
+            "src": "486:180:18"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "functionSelector": "2eeac4c3",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "secondaryPurchase",
+              "overrides": null,
+              "scope": 4172,
+              "stateMutability": "nonpayable",
+              "virtual": false,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "mutability": "mutable",
+                      "name": "nftId",
+                      "overrides": null,
+                      "scope": 4171,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 4107,
+                        "name": "ElementaryTypeName",
+                        "src": "765:7:18"
+                      }
+                    ],
+                    "id": 4108,
+                    "name": "VariableDeclaration",
+                    "src": "765:13:18"
+                  }
+                ],
+                "id": 4109,
+                "name": "ParameterList",
+                "src": "764:15:18"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 4110,
+                "name": "ParameterList",
+                "src": "787:0:18"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        4112
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "seller",
+                          "overrides": null,
+                          "scope": 4170,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "address",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 4111,
+                            "name": "ElementaryTypeName",
+                            "src": "797:7:18"
+                          }
+                        ],
+                        "id": 4112,
+                        "name": "VariableDeclaration",
+                        "src": "797:14:18"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "address",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "ownerOf",
+                              "referencedDeclaration": 1545,
+                              "type": "function (uint256) view external returns (address)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4049,
+                                  "type": "contract DeflyNFT",
+                                  "value": "_defly"
+                                },
+                                "id": 4113,
+                                "name": "Identifier",
+                                "src": "814:6:18"
+                              }
+                            ],
+                            "id": 4114,
+                            "name": "MemberAccess",
+                            "src": "814:14:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4108,
+                              "type": "uint256",
+                              "value": "nftId"
+                            },
+                            "id": 4115,
+                            "name": "Identifier",
+                            "src": "829:5:18"
+                          }
+                        ],
+                        "id": 4116,
+                        "name": "FunctionCall",
+                        "src": "814:21:18"
+                      }
+                    ],
+                    "id": 4117,
+                    "name": "VariableDeclarationStatement",
+                    "src": "797:38:18"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        4119
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "buyer",
+                          "overrides": null,
+                          "scope": 4170,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "address",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "nonpayable",
+                              "type": "address"
+                            },
+                            "id": 4118,
+                            "name": "ElementaryTypeName",
+                            "src": "845:7:18"
+                          }
+                        ],
+                        "id": 4119,
+                        "name": "VariableDeclaration",
+                        "src": "845:13:18"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "sender",
+                          "referencedDeclaration": null,
+                          "type": "address payable"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": -15,
+                              "type": "msg",
+                              "value": "msg"
+                            },
+                            "id": 4120,
+                            "name": "Identifier",
+                            "src": "861:3:18"
+                          }
+                        ],
+                        "id": 4121,
+                        "name": "MemberAccess",
+                        "src": "861:10:18"
+                      }
+                    ],
+                    "id": 4122,
+                    "name": "VariableDeclarationStatement",
+                    "src": "845:26:18"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        4124
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "sellingPrice",
+                          "overrides": null,
+                          "scope": 4170,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 4123,
+                            "name": "ElementaryTypeName",
+                            "src": "881:7:18"
+                          }
+                        ],
+                        "id": 4124,
+                        "name": "VariableDeclaration",
+                        "src": "881:20:18"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getSellingPrice",
+                              "referencedDeclaration": 4652,
+                              "type": "function (uint256) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4049,
+                                  "type": "contract DeflyNFT",
+                                  "value": "_defly"
+                                },
+                                "id": 4125,
+                                "name": "Identifier",
+                                "src": "904:6:18"
+                              }
+                            ],
+                            "id": 4126,
+                            "name": "MemberAccess",
+                            "src": "904:22:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4108,
+                              "type": "uint256",
+                              "value": "nftId"
+                            },
+                            "id": 4127,
+                            "name": "Identifier",
+                            "src": "927:5:18"
+                          }
+                        ],
+                        "id": 4128,
+                        "name": "FunctionCall",
+                        "src": "904:29:18"
+                      }
+                    ],
+                    "id": 4129,
+                    "name": "VariableDeclarationStatement",
+                    "src": "881:52:18"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        4131
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "mutability": "mutable",
+                          "name": "commision",
+                          "overrides": null,
+                          "scope": 4170,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 4130,
+                            "name": "ElementaryTypeName",
+                            "src": "943:7:18"
+                          }
+                        ],
+                        "id": 4131,
+                        "name": "VariableDeclaration",
+                        "src": "943:17:18"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "/",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "*",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 4124,
+                                      "type": "uint256",
+                                      "value": "sellingPrice"
+                                    },
+                                    "id": 4132,
+                                    "name": "Identifier",
+                                    "src": "964:12:18"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "3130",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 10",
+                                      "value": "10"
+                                    },
+                                    "id": 4133,
+                                    "name": "Literal",
+                                    "src": "979:2:18"
+                                  }
+                                ],
+                                "id": 4134,
+                                "name": "BinaryOperation",
+                                "src": "964:17:18"
+                              }
+                            ],
+                            "id": 4135,
+                            "name": "TupleExpression",
+                            "src": "963:19:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "313030",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "number",
+                              "type": "int_const 100",
+                              "value": "100"
+                            },
+                            "id": 4136,
+                            "name": "Literal",
+                            "src": "985:3:18"
+                          }
+                        ],
+                        "id": 4137,
+                        "name": "BinaryOperation",
+                        "src": "963:25:18"
+                      }
+                    ],
+                    "id": 4138,
+                    "name": "VariableDeclarationStatement",
+                    "src": "943:45:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transferFrom",
+                              "referencedDeclaration": 1017,
+                              "type": "function (address,address,uint256) external returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4047,
+                                  "type": "contract DeflyToken",
+                                  "value": "_token"
+                                },
+                                "id": 4139,
+                                "name": "Identifier",
+                                "src": "999:6:18"
+                              }
+                            ],
+                            "id": 4141,
+                            "name": "MemberAccess",
+                            "src": "999:19:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4119,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4142,
+                            "name": "Identifier",
+                            "src": "1019:5:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4112,
+                              "type": "address",
+                              "value": "seller"
+                            },
+                            "id": 4143,
+                            "name": "Identifier",
+                            "src": "1026:6:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "-",
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4124,
+                                  "type": "uint256",
+                                  "value": "sellingPrice"
+                                },
+                                "id": 4144,
+                                "name": "Identifier",
+                                "src": "1034:12:18"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4131,
+                                  "type": "uint256",
+                                  "value": "commision"
+                                },
+                                "id": 4145,
+                                "name": "Identifier",
+                                "src": "1049:9:18"
+                              }
+                            ],
+                            "id": 4146,
+                            "name": "BinaryOperation",
+                            "src": "1034:24:18"
+                          }
+                        ],
+                        "id": 4147,
+                        "name": "FunctionCall",
+                        "src": "999:60:18"
+                      }
+                    ],
+                    "id": 4148,
+                    "name": "ExpressionStatement",
+                    "src": "999:60:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "bool",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "transferFrom",
+                              "referencedDeclaration": 1017,
+                              "type": "function (address,address,uint256) external returns (bool)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4047,
+                                  "type": "contract DeflyToken",
+                                  "value": "_token"
+                                },
+                                "id": 4149,
+                                "name": "Identifier",
+                                "src": "1069:6:18"
+                              }
+                            ],
+                            "id": 4151,
+                            "name": "MemberAccess",
+                            "src": "1069:19:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4119,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4152,
+                            "name": "Identifier",
+                            "src": "1089:5:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4051,
+                              "type": "address",
+                              "value": "_organiser"
+                            },
+                            "id": 4153,
+                            "name": "Identifier",
+                            "src": "1096:10:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4131,
+                              "type": "uint256",
+                              "value": "commision"
+                            },
+                            "id": 4154,
+                            "name": "Identifier",
+                            "src": "1108:9:18"
+                          }
+                        ],
+                        "id": 4155,
+                        "name": "FunctionCall",
+                        "src": "1069:49:18"
+                      }
+                    ],
+                    "id": 4156,
+                    "name": "ExpressionStatement",
+                    "src": "1069:49:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "secondaryTransferNFT",
+                              "referencedDeclaration": 4530,
+                              "type": "function (address,uint256) external"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 4049,
+                                  "type": "contract DeflyNFT",
+                                  "value": "_defly"
+                                },
+                                "id": 4157,
+                                "name": "Identifier",
+                                "src": "1129:6:18"
+                              }
+                            ],
+                            "id": 4159,
+                            "name": "MemberAccess",
+                            "src": "1129:27:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4119,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4160,
+                            "name": "Identifier",
+                            "src": "1157:5:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4108,
+                              "type": "uint256",
+                              "value": "nftId"
+                            },
+                            "id": 4161,
+                            "name": "Identifier",
+                            "src": "1164:5:18"
+                          }
+                        ],
+                        "id": 4162,
+                        "name": "FunctionCall",
+                        "src": "1129:41:18"
+                      }
+                    ],
+                    "id": 4163,
+                    "name": "ExpressionStatement",
+                    "src": "1129:41:18"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "tryCall": false,
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4081,
+                              "type": "function (address,address,uint256)",
+                              "value": "Purchase"
+                            },
+                            "id": 4164,
+                            "name": "Identifier",
+                            "src": "1186:8:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4119,
+                              "type": "address",
+                              "value": "buyer"
+                            },
+                            "id": 4165,
+                            "name": "Identifier",
+                            "src": "1195:5:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4112,
+                              "type": "address",
+                              "value": "seller"
+                            },
+                            "id": 4166,
+                            "name": "Identifier",
+                            "src": "1202:6:18"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 4108,
+                              "type": "uint256",
+                              "value": "nftId"
+                            },
+                            "id": 4167,
+                            "name": "Identifier",
+                            "src": "1210:5:18"
+                          }
+                        ],
+                        "id": 4168,
+                        "name": "FunctionCall",
+                        "src": "1186:30:18"
+                      }
+                    ],
+                    "id": 4169,
+                    "name": "EmitStatement",
+                    "src": "1181:35:18"
+                  }
+                ],
+                "id": 4170,
+                "name": "Block",
+                "src": "787:436:18"
+              }
+            ],
+            "id": 4171,
+            "name": "FunctionDefinition",
+            "src": "738:485:18"
+          }
+        ],
+        "id": 4172,
+        "name": "ContractDefinition",
+        "src": "78:1147:18"
+      }
+    ],
+    "id": 4173,
+    "name": "SourceUnit",
+    "src": "0:1226:18"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.12+commit.27d51765.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.3",
+  "updatedAt": "2022-01-06T07:07:53.505Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

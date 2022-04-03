@@ -1,0 +1,48 @@
+{
+    "id": 1,
+    "name": "Dr. Bruce",
+    "description": "Dr. Bruce is a specialized veterinarian doctor. He possesses superpowers for helping animals; he senses when any animal nearby is in danger or needs help. When he senses an afflicted animal, he starts rushing towards that innocent soul.",
+    "image": "https://qazibucket.s3.us-east-2.amazonaws.com/vet/images/bruce.webp",
+    "attributes": [
+        {
+            "superpower": "Speed",
+            "rating": 75
+        },
+        {
+            "superpower": "Stamina",
+            "rating": 75
+        },
+        {
+            "superpower": "Strength",
+            "rating": 85
+        },
+        {
+            "superpower": "Intelligence",
+            "rating": 75
+        },
+        {
+            "superpower": "Flight",
+            "rating": 0
+        },
+        {
+            "superpower": "Healing",
+            "rating": 35
+        },
+        {
+            "superpower": "Stealth",
+            "rating": 0
+        },
+        {
+            "superpower": "telepathy",
+            "rating": 0
+        },
+        {
+            "superpower": "telekinesis",
+            "rating": 0
+        },
+        {
+            "superpower": "metal control",
+            "rating": 0
+        }
+    ]
+}
