@@ -3461,17 +3461,18 @@ span.type::after {
     opacity: 1;
   }
 }
-.paging:hover{
-    border: 2px solid #ffffff !important;
-    background-color: rgb(2 26 60) !important;
+.paging:hover {
+  border: 2px solid #ffffff !important;
+  background-color: rgb(2 26 60) !important;
 }
 @media only screen and (max-width: 600px) {
- 
   #pagingDivId {
     padding-left: 0rem !important;
   }
   .is_dark .flat-title-page.inner {
-    background-size: 413px 570px;
+    background: url(../images/backgroup-secsion/cover_vertical.webp) center
+      center no-repeat;
+    background-size: 413px 570px !important;
   }
   .header_1.header_2.style2 #site-logo {
     margin-left: 0rem !important;

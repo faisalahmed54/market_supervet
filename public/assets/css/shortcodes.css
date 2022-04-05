@@ -1982,7 +1982,7 @@
 .is_dark .flat-title-page.inner {
     padding        : 139px 0 59px;
     position       : relative;
-    background     : url(../images/backgroup-secsion/cover_vertical.webp) center center no-repeat;
+    background     : url(../images/backgroup-secsion/img_bg_page_title_dark.webp) center center no-repeat;
     background-size: cover;
 }
 .page-title-heading .heading {

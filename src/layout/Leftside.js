@@ -12,150 +12,175 @@ const Leftside = () => {
       url: "https://qazibucket.s3.us-east-2.amazonaws.com/vet/jsons/bruce.json",
       image: "assets/images/characters/bruce.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "2",
       url: "N/A",
       image: "assets/images/characters/nina.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "3",
       url: "N/A",
       image: "assets/images/characters/wolf.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "4",
       url: "N/A",
       image: "assets/images/characters/steelshot.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "5",
       url: "N/A",
       image: "assets/images/characters/x.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "6",
       url: "N/A",
       image: "assets/images/characters/ivy.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "7",
       url: "N/A",
       image: "assets/images/characters/vision.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "8",
       url: "N/A",
       image: "assets/images/characters/maximus.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "9",
       url: "N/A",
       image: "assets/images/characters/gibran.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "10",
       url: "N/A",
       image: "assets/images/characters/psycho.webp",
       status: "soon",
+      catergory: "characters",
     },
     {
       id: "11",
       url: "N/A",
       image: "assets/images/assets_cards/health_potion.webp",
       status: "soon",
+      catergory: "serums",
     },
     {
       id: "12",
       url: "N/A",
       image: "assets/images/assets_cards/power_potion.webp",
       status: "soon",
+      catergory: "serums",
     },
     {
       id: "13",
       url: "N/A",
       image: "assets/images/assets_cards/flying_potion.webp",
       status: "soon",
+      catergory: "serums",
     },
     {
       id: "14",
       url: "N/A",
       image: "assets/images/assets_cards/speed_potion.webp",
       status: "soon",
+      catergory: "serums",
     },
     {
       id: "15",
       url: "N/A",
       image: "assets/images/assets_cards/stamina_potion.webp",
       status: "soon",
+      catergory: "serums",
     },
     {
       id: "16",
       url: "N/A",
       image: "assets/images/assets_cards/saw.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "17",
       url: "N/A",
       image: "assets/images/assets_cards/knife.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "18",
       url: "N/A",
       image: "assets/images/assets_cards/hammer.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "19",
       url: "N/A",
       image: "assets/images/assets_cards/clamps.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "20",
       url: "N/A",
       image: "assets/images/assets_cards/bottle.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "21",
       url: "N/A",
       image: "assets/images/assets_cards/injections.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "22",
       url: "N/A",
       image: "assets/images/assets_cards/razor.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "23",
       url: "N/A",
       image: "assets/images/assets_cards/rope.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "24",
       url: "N/A",
       image: "assets/images/assets_cards/scope.webp",
       status: "soon",
+      catergory: "tools",
     },
     {
       id: "25",
       url: "N/A",
       image: "assets/images/assets_cards/first_aid.webp",
       status: "soon",
+      catergory: "tools",
     },
   ];
 
@@ -178,7 +203,71 @@ const Leftside = () => {
       });
     }
   };
+  //checkboxes Handle function
+  const [filterInfo, setFilterInfo] = useState({
+    filterBoxesChecked: [],
+  });
+  const handleChange = (e) => {
+    // Destructuring
+    const { value, checked } = e.target;
+    const { filterBoxesChecked } = filterInfo;
 
+    // console.log(`${value} is ${checked}`);
+
+    // Case 1 : The user checks the box
+    if (checked) {
+      setFilterInfo({
+        filterBoxesChecked: [...filterBoxesChecked, value],
+      });
+    }
+
+    // Case 2  : The user unchecks the box
+    else {
+      setFilterInfo({
+        filterBoxesChecked: filterBoxesChecked.filter((e) => e !== value),
+      });
+    }
+    // console.log(filterBoxesChecked);
+  };
+  //Update Vet Details According to Filteration
+  const updateVetDetailsAccordingToFilter = () => {
+    // console.log(filterInfo.filterBoxesChecked);
+    if (filterInfo.filterBoxesChecked.length > 0) {
+      var vetsDataIndexes = [];
+      vetsData.map((item, index) => {
+        var indexFound = filterInfo.filterBoxesChecked.indexOf(item.catergory);
+        console.log(indexFound);
+        console.log(index);
+        if (indexFound < 0) {
+          vetsDataIndexes.push(index);
+          // setVetDetails(vetsDataTemp);
+          // console.log(VetDetails);
+        }
+        if (index == vetsData.length - 1) {
+          console.log(vetsDataIndexes);
+          var vetsDataTemp = [...vetsData];
+          console.log(vetsDataTemp);
+          for (var i = vetsDataIndexes.length - 1; i >= 0; i--) {
+            vetsDataTemp.splice(vetsDataIndexes[i], 1);
+            if (i == 0) {
+              console.log(vetsDataTemp);
+              setVetDetails(vetsDataTemp);
+              console.log(VetDetails);
+            }
+          }
+          // vetsDataIndexes.map((item, index) => {
+          //   console.log(item)
+          //    vetsDataTemp.splice(item,1);
+          //   if (index == vetsDataIndexes.length - 1) {
+          //     console.log(vetsDataTemp);
+          //     setVetDetails(vetsDataTemp);
+          //     console.log(VetDetails);
+          //   }
+          // });
+        }
+      });
+    }
+  };
   //show pages function
   const showPages = async (id) => {
     try {
@@ -227,6 +316,9 @@ const Leftside = () => {
     setVetDetails(vetsData);
     showPages(1);
   }, []);
+  useEffect(async () => {
+    updateVetDetailsAccordingToFilter();
+  }, [filterInfo]);
 
   return (
     <div id="wrapper">
@@ -264,24 +356,39 @@ const Leftside = () => {
                       <i class="icon-fl-down-2"></i>
                     </div>
                     <div class="content-wg-category">
-                      <form action="#">
+                      <form action="#" id="statusForm">
                         <label>
                           Buy Now
-                          <input type="checkbox" checked="checked" />
+                          <input
+                            type="checkbox"
+                            id="buyNowCB"
+                            value="buy"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label>
                           On Auctions
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="onAuctionsCB"
+                            value="onAuctions"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label class="mgbt-none">
                           Has Offers
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="hasOffersCB"
+                            value="hasOffers"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
@@ -294,24 +401,39 @@ const Leftside = () => {
                       <i class="icon-fl-down-2"></i>
                     </div>
                     <div class="content-wg-category">
-                      <form action="#">
+                      <form action="#" id="catergoriesForm">
                         <label>
                           Characters
-                          <input type="checkbox" checked="checked" />
+                          <input
+                            type="checkbox"
+                            id="charactersCB"
+                            value="characters"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label>
                           Tools
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="toolsCB"
+                            value="tools"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label>
                           Serums
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="serumsCB"
+                            value="serums"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
@@ -324,17 +446,27 @@ const Leftside = () => {
                       <i class="icon-fl-down-2"></i>
                     </div>
                     <div class="content-wg-category">
-                      <form action="#">
+                      <form action="#" id="chainsForm">
                         <label>
                           Binance Smart Chain
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="bSmartChainCB"
+                            value="binanceSmartChain"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label>
                           Super Crypto Chain
-                          <input type="checkbox" checked="checked" />
+                          <input
+                            type="checkbox"
+                            id="sCryptoChainCB"
+                            value="superCryptoChain"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
@@ -347,17 +479,27 @@ const Leftside = () => {
                       <i class="icon-fl-down-2"></i>
                     </div>
                     <div class="content-wg-category">
-                      <form action="#">
+                      <form action="#" id="collectionsForm">
                         <label>
                           Super Mystery Boxes
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="sMysteryBoxesCB"
+                            value="superMysteryBoxes"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
 
                         <label>
                           Super Serums
-                          <input type="checkbox" />
+                          <input
+                            type="checkbox"
+                            id="sSerumsCB"
+                            value="superSerums"
+                            onChange={handleChange}
+                          />
                           <span class="btn-checkbox"></span>
                         </label>
                         <br />
@@ -370,7 +512,9 @@ const Leftside = () => {
                 <div class="box-epxlore">
                   {Array.isArray(VetDetails) && VetDetails.length > 0 ? (
                     VetDetails.map((item) => (
-                      <div class="sc-card-product explode style2 mg-bt">
+                      <div
+                        class={`sc-card-product explode style2 mg-bt ${item.catergory}`}
+                      >
                         <div class="card-media">
                           <img src={item.image} alt="Image" />
                           {item.url === "N/A" ? (
