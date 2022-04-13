@@ -227,43 +227,24 @@ const Leftside = () => {
         filterBoxesChecked: filterBoxesChecked.filter((e) => e !== value),
       });
     }
-    // console.log(filterBoxesChecked);
   };
   //Update Vet Details According to Filteration
   const updateVetDetailsAccordingToFilter = () => {
-    // console.log(filterInfo.filterBoxesChecked);
     if (filterInfo.filterBoxesChecked.length > 0) {
       var vetsDataIndexes = [];
       vetsData.map((item, index) => {
         var indexFound = filterInfo.filterBoxesChecked.indexOf(item.catergory);
-        console.log(indexFound);
-        console.log(index);
         if (indexFound < 0) {
           vetsDataIndexes.push(index);
-          // setVetDetails(vetsDataTemp);
-          // console.log(VetDetails);
         }
         if (index == vetsData.length - 1) {
-          console.log(vetsDataIndexes);
           var vetsDataTemp = [...vetsData];
-          console.log(vetsDataTemp);
           for (var i = vetsDataIndexes.length - 1; i >= 0; i--) {
             vetsDataTemp.splice(vetsDataIndexes[i], 1);
             if (i == 0) {
-              console.log(vetsDataTemp);
               setVetDetails(vetsDataTemp);
-              console.log(VetDetails);
             }
           }
-          // vetsDataIndexes.map((item, index) => {
-          //   console.log(item)
-          //    vetsDataTemp.splice(item,1);
-          //   if (index == vetsDataIndexes.length - 1) {
-          //     console.log(vetsDataTemp);
-          //     setVetDetails(vetsDataTemp);
-          //     console.log(VetDetails);
-          //   }
-          // });
         }
       });
     }
